@@ -8,7 +8,8 @@ import Detail, { id } from './components/Detail';
 import About from './components/About';
 import Form from './components/Form'
 
-
+const URL_BASE = 'https://be-a-rym.up.railway.app/api/character';
+const API_KEY = '8271722406e1.5b836459e80c3f4f56d9';
 
 
 const email = 'francoC@gmail.com';
@@ -34,7 +35,7 @@ function App() {
    }, [access]);
 
    const onSearch = (id) => {
-      axios(`https://rickandmortyapi.com/api/character/${id}`)
+      axios(`${URL_BASE}/${id}?key=${API_KEY}`)
       .then(response => response.data)
       .then(( data ) => {
          if (data.name) {
